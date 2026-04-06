@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<!-- saved from url=(0032)http://localhost:3000/admin.html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Dashboard</title>
+
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: linear-gradient(135deg, #161a25, #1f2533, #2b3245);
+      color: white;
+      padding: 30px;
+    }
+
+    h1 {
+      margin-bottom: 5px;
+    }
+
+    p {
+      color: #cbd5e1;
+      margin-bottom: 20px;
+    }
+
+    .topbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      margin-bottom: 20px;
+    }
+
+    .btn {
+      background: #7c8db5;
+      color: white;
+      border: none;
+      padding: 10px 14px;
+      border-radius: 8px;
+      cursor: pointer;
+      text-decoration: none;
+      margin-left: 10px;
+    }
+
+    .btn:hover {
+      background: #93a6d0;
+    }
+
+    .table-box {
+      background: rgba(255,255,255,0.06);
+      border-radius: 12px;
+      padding: 20px;
+      overflow-x: auto;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      min-width: 900px;
+    }
+
+    th, td {
+      padding: 12px;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+      text-align: left;
+    }
+
+    th {
+      background: rgba(255,255,255,0.1);
+    }
+
+    tr:hover {
+      background: rgba(255,255,255,0.05);
+    }
+
+    #status {
+      margin-top: 10px;
+      color: #cbd5e1;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="topbar">
+    <div>
+      <h1>Admin Dashboard</h1>
+      <p>View all registered students</p>
+    </div>
+
+    <div>
+      <a href="http://localhost:3000/" class="btn">Go to Form</a>
+      <button onclick="loadData()" class="btn">Refresh</button>
+    </div>
+  </div>
+
+  <div class="table-box">
+    <table>
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Full Name</th>
+          <th>Event</th>
+          <th>Student ID</th>
+          <th>Department</th>
+          <th>Email</th>
+          <th>Year</th>
+          <th>Notes</th>
+          <th>Created At</th>
+        </tr>
+      </thead>
+
+      <tbody id="tableBody">
+          <tr>
+            <td>14</td>
+            <td>ved patel</td>
+            <td>Tech Fest</td>
+            <td>KU2507U0088</td>
+            <td>UIT</td>
+            <td>ku2507u0088@karnavatiuniversity.edu.in</td>
+            <td>1st Year</td>
+            <td></td>
+            <td>2026-04-03T07:52:47.000Z</td>
+          </tr>
+        
+          <tr>
+            <td>13</td>
+            <td>ved patel</td>
+            <td>Cultural Event</td>
+            <td>1234</td>
+            <td>UIT</td>
+            <td>ku2507u0088@karnavatiuniversity.edu.in</td>
+            <td>2nd Year</td>
+            <td></td>
+            <td>2026-04-03T07:37:07.000Z</td>
+          </tr>
+        
+          <tr>
+            <td>12</td>
+            <td>Aarush Soni</td>
+            <td>Hackathon</td>
+            <td>1234</td>
+            <td>UIT</td>
+            <td>ku2507u0088@karnavatiuniversity.edu.in</td>
+            <td>2nd Year</td>
+            <td></td>
+            <td>2026-04-03T05:26:01.000Z</td>
+          </tr>
+        
+          <tr>
+            <td>11</td>
+            <td>daksh</td>
+            <td>Workshop</td>
+            <td>1234</td>
+            <td>UIT</td>
+            <td>ku2507u0088@karnavatiuniversity.edu.in</td>
+            <td>1st Year</td>
+            <td></td>
+            <td>2026-04-03T05:01:37.000Z</td>
+          </tr>
+        
+          <tr>
+            <td>10</td>
+            <td>d p</td>
+            <td>Hackathon</td>
+            <td>1234</td>
+            <td>UIT</td>
+            <td>ku2507u0088@karnavatiuniversity.edu.in</td>
+            <td>1st Year</td>
+            <td></td>
+            <td>2026-04-03T04:53:49.000Z</td>
+          </tr>
+        
+          <tr>
+            <td>9</td>
+            <td>aarush</td>
+            <td>Seminar</td>
+            <td>KU2507U0088</td>
+            <td>UIT</td>
+            <td>ku2507u0088@karnavatiuniversity.edu.in</td>
+            <td>1st Year</td>
+            <td></td>
+            <td>2026-04-03T04:51:26.000Z</td>
+          </tr>
+        
+          <tr>
+            <td>8</td>
+            <td>Aarush Soni</td>
+            <td>Cultural Event</td>
+            <td>KU2507U0088</td>
+            <td>UIT</td>
+            <td>ku2507u0088@karnavatiuniversity.edu.in</td>
+            <td>1st Year</td>
+            <td></td>
+            <td>2026-04-03T04:46:29.000Z</td>
+          </tr>
+        
+          <tr>
+            <td>7</td>
+            <td>Aarush Soni</td>
+            <td>Workshop</td>
+            <td>KU2507U0088</td>
+            <td>UIT</td>
+            <td>ku2507u0088@karnavatiuniversity.edu.in</td>
+            <td>1st Year</td>
+            <td></td>
+            <td>2026-04-03T04:42:50.000Z</td>
+          </tr>
+        
+          <tr>
+            <td>6</td>
+            <td>Dish patel</td>
+            <td>Workshop</td>
+            <td>KU2507U0078</td>
+            <td>UIT</td>
+            <td>ku2507u0078@karnavatiuniversity.edu.in</td>
+            <td>1st Year</td>
+            <td></td>
+            <td>2026-04-03T04:33:45.000Z</td>
+          </tr>
+        
+          <tr>
+            <td>5</td>
+            <td>Aarush Soni</td>
+            <td>Tech Fest</td>
+            <td>KU2507U0088</td>
+            <td>UIT</td>
+            <td>ku2507u0088@karnavatiuniversity.edu.in</td>
+            <td>1st Year</td>
+            <td></td>
+            <td>2026-04-03T04:25:03.000Z</td>
+          </tr>
+        
+          <tr>
+            <td>4</td>
+            <td>Aarush Soni</td>
+            <td>Tech Fest</td>
+            <td>KU2507U0088</td>
+            <td>UIT</td>
+            <td>ku2507u0088@karnavatiuniversity.edu.in</td>
+            <td>1st Year</td>
+            <td></td>
+            <td>2026-04-03T04:19:38.000Z</td>
+          </tr>
+        
+          <tr>
+            <td>3</td>
+            <td>Aarush Soni</td>
+            <td>Tech Fest</td>
+            <td>KU2507U0088</td>
+            <td>UIT</td>
+            <td>ku2507u0088@karnavatiuniversity.edu.in</td>
+            <td>1st Year</td>
+            <td></td>
+            <td>2026-04-03T03:54:33.000Z</td>
+          </tr>
+        
+          <tr>
+            <td>2</td>
+            <td>Aarush Soni</td>
+            <td>Tech Fest</td>
+            <td>KU2507U0088</td>
+            <td>UIT</td>
+            <td>ku2507u0088@karnavatiuniversity.edu.in</td>
+            <td>1st Year</td>
+            <td></td>
+            <td>2026-04-03T03:49:59.000Z</td>
+          </tr>
+        
+          <tr>
+            <td>1</td>
+            <td>Aarush Soni</td>
+            <td>Tech Fest</td>
+            <td>KU2507U0088</td>
+            <td>UIT</td>
+            <td>ku2507u0088@karnavatiuniversity.edu.in</td>
+            <td>1st Year</td>
+            <td></td>
+            <td>2026-04-03T03:46:32.000Z</td>
+          </tr>
+        </tbody>
+    </table>
+
+    <div id="status">Data loaded successfully</div>
+  </div>
+
+  <script>
+    async function loadData() {
+      const tableBody = document.getElementById("tableBody");
+      const status = document.getElementById("status");
+
+      tableBody.innerHTML = "<tr><td colspan='9'>Loading...</td></tr>";
+      status.textContent = "Fetching data...";
+
+      try {
+        const res = await fetch("/registrations");
+        const data = await res.json();
+
+        if (!Array.isArray(data) || data.length === 0) {
+          tableBody.innerHTML = "<tr><td colspan='9'>No data found</td></tr>";
+          status.textContent = "No records found.";
+          return;
+        }
+
+        tableBody.innerHTML = data.map(item => `
+          <tr>
+            <td>${item.id}</td>
+            <td>${item.full_name}</td>
+            <td>${item.event_name}</td>
+            <td>${item.student_id}</td>
+            <td>${item.department}</td>
+            <td>${item.email}</td>
+            <td>${item.year}</td>
+            <td>${item.notes}</td>
+            <td>${item.created_at}</td>
+          </tr>
+        `).join("");
+
+        status.textContent = "Data loaded successfully";
+
+      } catch (err) {
+        tableBody.innerHTML = "<tr><td colspan='9'>Error loading data</td></tr>";
+        status.textContent = "Error fetching data";
+        console.error(err);
+      }
+    }
+
+    loadData();
+  </script>
+
+
+</body></html>
